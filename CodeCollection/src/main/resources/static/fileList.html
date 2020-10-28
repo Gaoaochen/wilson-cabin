@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下载文件清单</title>
+</head>
+<body>
+<script>
+    var i=1;
+    function create() {
+        document.body.appendChild(document.createElement("br"));
+        var a=document.createElement("a");
+        a.id="a"+i;
+        a.href="www.csdn.net";
+        a.innerText="我是超链接"+i;
+        a.title="我是超链接"+i;
+        document.body.appendChild(a);
+        i++;
+    }
+
+
+</script>
+<input type="button" value='click me' onclick='create();' />
+</body>
+</html>

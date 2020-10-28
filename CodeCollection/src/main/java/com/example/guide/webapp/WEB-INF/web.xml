@@ -1,0 +1,10 @@
+<!--<!DOCTYPE web-app PUBLIC-->
+<!-- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"-->
+<!-- "http://java.sun.com/dtd/web-app_2_3.dtd" >-->
+<!--&lt;!&ndash;该web.xml在打war包时需要使用&ndash;&gt;-->
+<!--<web-app>-->
+<!--    <context-param>-->
+<!--        <param-name>springSecurityConfig</param-name>-->
+<!--        <param-value>/Users/lidongqi/Desktop/myCode/CodeGuide/src/main/java/com/example/guide/GuideApplication</param-value>-->
+<!--    </context-param>-->
+<!--</web-app>-->

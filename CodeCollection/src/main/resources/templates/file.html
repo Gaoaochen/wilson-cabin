@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-1.10.2.min.js"></script>
+    <title>Wilson's Cabin</title>
+</head>
+<body background="/timg.jpeg" ;
+      style=" background-repeat:no-repeat ;
+background-size:100% 100%;
+background-attachment: fixed;">
+
+<!--<a href="http://localhost:8086/download/?fileName=shell.zip">-->
+<!--    <input type="button" value="shell.zip下载" style="font-size:100px;height:110px;width:220px;">-->
+<!--</a>-->
+<input type="text" id="value" class="textStyle" style="width: 300px"/>
+<input type="button" value="搜索" style="font-size:300px;width: 100px;height: 300px"  onclick="getTextAndSend()">
+<!--<h1 onclick="this.innerHTML='Ooops!'">点击文本！</h1>-->
+<div id="myDiv"><h2>显示查询结果</h2></div>
+<script>
+
+    var request = new XMLHttpRequest();
+    function getTextAndSend() {
+        var text = document.getElementById("value").value;
+        // window.alert(text);
+        var url = "http://localhost:8086/test2?param=" + text;
+        request.open('GET', url, true);
+        // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.send();
+        //请求后的回调接口，可将请求成功后要执行的程序写在其中
+        request.onreadystatechange=function () {
+            if (request.readyState==4 &&request.status == 200) {
+                // window.alert("请求成功，状态码" + request.status);
+                document.getElementById("myDiv").innerHTML=request.responseText;
+
+                // var json =request.responseText;
+                //     for (var key in json){
+                //         alert(key);
+                //         alert(json[key]);
+                //         // create(json,json[key]);
+                //     }
+            }
+        }
+        // window.location.href = "http://localhost:8086/fileList.html";
+    }
+
+    var i=1;
+    function create(href,innerText) {
+        document.body.appendChild(document.createElement("br"));
+        var a=document.createElement("a");
+        a.id="a"+i;
+        a.href=href;
+        a.innerText=innerText;
+        a.title=innerText;
+        document.body.appendChild(a);
+        i++;
+    }
+
+
+    // function savejson(json) {
+    //     json
+    // }
+</script>
+</body>
+</html>
